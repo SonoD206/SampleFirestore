@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TAk-6H-Aar">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TodoApp-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleCollectionAndFireStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxF-Yc-Fo8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="4qk-aK-iP4"/>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EqG-ys-ykE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SvA-vj-8dq">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodoCollectionViewCell" id="GIL-Ie-43D" customClass="TodoCollectionViewCell" customModule="SampleCollectionAndFireStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Uug-5G-jSU">
+                                            <rect key="frame" x="0.0" y="0.0" width="79" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhG-Cu-fTv">
+                                                    <rect key="frame" x="10" y="49" width="59" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="VhG-Cu-fTv" secondAttribute="trailing" constant="10" id="9qI-ua-sbO"/>
+                                                <constraint firstItem="VhG-Cu-fTv" firstAttribute="centerY" secondItem="Uug-5G-jSU" secondAttribute="centerY" id="Es8-af-gak"/>
+                                                <constraint firstItem="VhG-Cu-fTv" firstAttribute="centerX" secondItem="Uug-5G-jSU" secondAttribute="centerX" id="JtK-pd-2df"/>
+                                                <constraint firstItem="VhG-Cu-fTv" firstAttribute="leading" secondItem="Uug-5G-jSU" secondAttribute="leading" constant="10" id="w7x-jm-6Wx"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="todoLabel" destination="VhG-Cu-fTv" id="wtj-ND-aSl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EqG-ys-ykE" secondAttribute="bottom" id="5wE-e2-fd0"/>
+                            <constraint firstItem="EqG-ys-ykE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="99z-cR-9z9"/>
+                            <constraint firstItem="uxF-Yc-Fo8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CLS-cC-M11"/>
+                            <constraint firstAttribute="trailing" secondItem="uxF-Yc-Fo8" secondAttribute="trailing" id="hlh-7S-rFD"/>
+                            <constraint firstItem="EqG-ys-ykE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lk9-sf-8vB"/>
+                            <constraint firstItem="uxF-Yc-Fo8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qfS-hX-aSc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EqG-ys-ykE" secondAttribute="trailing" id="vCB-5r-cUk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TodoApp" id="lhV-fa-sky">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Jdb-ay-O63">
+                            <connections>
+                                <action selector="tappedPlusButton:" destination="BYZ-38-t0r" id="QZh-oo-tI7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="todoCollectionView" destination="EqG-ys-ykE" id="XnU-h6-LLk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fvo-4o-cTm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TAk-6H-Aar" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6kl-aJ-pPc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="T0S-Y7-BX0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1De-4p-6uO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
