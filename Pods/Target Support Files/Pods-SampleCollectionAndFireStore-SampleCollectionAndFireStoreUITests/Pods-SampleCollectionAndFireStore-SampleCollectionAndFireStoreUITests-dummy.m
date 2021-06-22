@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_SampleCollectionAndFireStore_SampleCollectionAndFireStoreUITests : NSObject
-@end
-@implementation PodsDummy_Pods_SampleCollectionAndFireStore_SampleCollectionAndFireStoreUITests
-@end
