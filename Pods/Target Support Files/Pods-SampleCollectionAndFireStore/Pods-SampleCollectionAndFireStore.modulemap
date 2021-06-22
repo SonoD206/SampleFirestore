@@ -1,6 +1,0 @@
-framework module Pods_SampleCollectionAndFireStore {
-  umbrella header "Pods-SampleCollectionAndFireStore-umbrella.h"
-
-  export *
-  module * { export * }
-}
